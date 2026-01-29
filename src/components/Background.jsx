@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Meteors from "./ui/Meteors";
 import StarsBackground from "./ui/StarsBackground";
 import ShootingStars from "./ui/ShootingStars";

@@ -14,8 +14,8 @@ export default function Meteors({ number, className }) {
           <span
             key={"meteor" + idx}
             className={cn(
-              "animate-meteor absolute h-0.5 w-0.5 rotate-[25deg] rounded-[9999px] bg-linear-to-r from-white via-white to-transparent shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]",
-              "before:absolute before:top-1/2 before:h-[1px] before:w-[50px] before:-translate-y-[50%] before:transform before:bg-linear-to-r before:from-white before:to-transparent before:content-['']",
+              "animate-meteor absolute h-0.5 w-0.5 rotate-25 rounded-[9999px] bg-linear-to-r from-white via-white to-transparent shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]",
+              "before:absolute before:top-1/2 before:h-px before:w-12.5 before:-translate-y-[50%] before:transform before:bg-linear-to-r before:from-white before:to-transparent before:content-['']",
               className,
             )}
             style={{
