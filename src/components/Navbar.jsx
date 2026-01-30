@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const navItems = [
   {
     name: "Home",
-    href: "#home",
+    href: "#hero",
   },
   {
     name: "About",
@@ -50,7 +50,7 @@ export default function Navbar() {
       <div className="container flex items-center justify-between">
         <a
           className="text-xl font-bold text-primary flex items-center"
-          href="#home"
+          href="#hero"
         >
           <span className="relative z-10">
             <span className="text-glow text-foreground"> Dlorr </span> Portfolio

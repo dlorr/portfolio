@@ -1,6 +1,20 @@
+import { useToast } from "@/hooks/use-toast";
 import { Briefcase, Code, User } from "lucide-react";
 
 export default function AboutSection() {
+  const { toast } = useToast();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setTimeout(() => {
+      toast({
+        title: "CV Download Started!",
+        description:
+          "Check your browser’s downloads if it doesn’t start automatically.",
+      });
+    }, 1500);
+  };
   return (
     <section id="about" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
@@ -35,7 +49,8 @@ export default function AboutSection() {
               </a>
 
               <a
-                href=""
+                href="#"
+                onClick={handleSubmit}
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 {" "}
