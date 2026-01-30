@@ -20,7 +20,7 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla,
             veritatis earum illum necessitatibus cum iure impedit accusamus
             asperiores vitae laborum officia, doloribus corrupti omnis
