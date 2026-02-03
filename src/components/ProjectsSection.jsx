@@ -36,7 +36,7 @@ export default function ProjectsSection() {
                   {project.tags.map((tag, key) => (
                     <span
                       key={key}
-                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                      className="px-2 py-1 text-xs font-medium border rounded-full text-foreground"
                     >
                       {tag}
                     </span>
