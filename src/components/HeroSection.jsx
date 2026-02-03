@@ -21,14 +21,13 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla,
-            veritatis earum illum necessitatibus cum iure impedit accusamus
-            asperiores vitae laborum officia, doloribus corrupti omnis
-            exercitationem saepe fuga possimus, facere dolorum!
+            I am a passionate Fullstack Developer exploring the universe of web
+            development. I craft interactive, modern, and responsive experiences
+            that shine as bright as the stars in the night sky.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-            <a href="#projects" className="cosmic-button">
+            <a href="#projects" className="cosmic-button inline-block">
               View My Work
             </a>
           </div>

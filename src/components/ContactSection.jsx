@@ -36,8 +36,8 @@ export default function ContactSection() {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui expedita
-          quibusdam nihil delectus minima laboriosam maxime ratione.
+          Have a project idea or want to collaborate? Let's create something
+          stellar together!
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -122,7 +122,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-lg shadow-xs">
+          <div className="gradient-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -131,7 +131,7 @@ export default function ContactSection() {
                   htmlFor="name"
                   className="block text-sm font-medium mb-2"
                 >
-                  Your Name
+                  Name
                 </label>
                 <input
                   type="text"
@@ -148,7 +148,7 @@ export default function ContactSection() {
                   htmlFor="email"
                   className="block text-sm font-medium mb-2"
                 >
-                  Your Email
+                  Email
                 </label>
                 <input
                   type="email"
@@ -165,7 +165,7 @@ export default function ContactSection() {
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                 >
-                  Your Message
+                  Message
                 </label>
                 <textarea
                   id="message"

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -110,6 +111,7 @@
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
+    font-family: "Space Grotesk", system-ui, sans-serif;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
@@ -147,11 +149,15 @@
   text-shadow: 0 0 10px rgba(89, 195, 246, 0.5);
 }
 
-@utility gradient-border {
+@utility gradient-card {
   @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+  background: linear-gradient(
+    to right,
+    hsl(var(--card) / 0.05),
+    hsl(var(--card) / 1)
+  );
   background-clip: padding-box;
-  border: 1px solid transparent;
+  border: 1px solid hsl(var(--primary) / 0.4);
 }
 
 @utility cosmic-button {
