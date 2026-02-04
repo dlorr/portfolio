@@ -1,4 +1,5 @@
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import {
   Instagram,
@@ -96,7 +97,7 @@ export default function ContactSection() {
 
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
+              {/* <div className="flex space-x-4 justify-center">
                 <a
                   href="#"
                   target="_blank"
@@ -118,6 +119,34 @@ export default function ContactSection() {
                 >
                   <Instagram />
                 </a>
+              </div> */}
+
+              <div className="flex space-x-6 justify-center">
+                {[
+                  { Icon: Linkedin, label: "LinkedIn" },
+                  { Icon: Twitter, label: "Twitter" },
+                  { Icon: Instagram, label: "Instagram" },
+                ].map(({ Icon, label }, i) => (
+                  <motion.a
+                    key={i}
+                    href="#"
+                    target="_blank"
+                    className="group relative text-muted-foreground hover:text-primary transition-colors"
+                    whileHover={{ y: -10, scale: 1.2 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 320,
+                      damping: 18,
+                    }}
+                  >
+                    <Icon />
+
+                    {/* Tooltip */}
+                    <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all text-xs bg-background/80 backdrop-blur px-2 py-1 rounded shadow">
+                      {label}
+                    </span>
+                  </motion.a>
+                ))}
               </div>
             </div>
           </div>
