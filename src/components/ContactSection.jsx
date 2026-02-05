@@ -123,9 +123,9 @@ export default function ContactSection() {
 
               <div className="flex space-x-6 justify-center">
                 {[
-                  { Icon: Linkedin, label: "LinkedIn" },
-                  { Icon: Twitter, label: "Twitter" },
-                  { Icon: Instagram, label: "Instagram" },
+                  { Icon: Linkedin, label: "Visit My LinkedIn" },
+                  { Icon: Twitter, label: "Visit My Twitter" },
+                  { Icon: Instagram, label: "Visit My Instagram" },
                 ].map(({ Icon, label }, i) => (
                   <motion.a
                     key={i}
@@ -142,7 +142,7 @@ export default function ContactSection() {
                     <Icon />
 
                     {/* Tooltip */}
-                    <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all text-xs bg-background/80 backdrop-blur px-2 py-1 rounded shadow">
+                    <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all text-xs bg-background/80 backdrop-blur px-2 py-1 rounded shadow whitespace-nowrap">
                       {label}
                     </span>
                   </motion.a>

@@ -1,7 +1,76 @@
 import { projects } from "@/data/projects";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { Tabs } from "./ui/Tabs";
+import { motion } from "motion/react";
 
 export default function ProjectsSection() {
+  const tabs = projects.map((project) => ({
+    value: project.id,
+    title: project.title,
+    content: (
+      <div className="gradient-card rounded-lg overflow-hidden shadow-lg max-w-5xl bg-card">
+        <div className="h-80 md:h-96 overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+
+        <div className="p-6">
+          <div className="flex flex-wrap gap-2 mb-4 justify-center">
+            {project.tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="px-2 py-1 text-xs font-medium border rounded-full text-foreground"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <h3 className="text-2xl md:text-3xl font-semibold mb-2">
+            {project.title}
+          </h3>
+
+          <p className="text-muted-foreground text-sm md:text-base mb-4">
+            {project.description}
+          </p>
+
+          <div className="flex space-x-6 justify-center">
+            {[
+              { Icon: ExternalLink, label: "Visit Website" },
+              { Icon: Github, label: "Visit Github Repository" },
+            ].map(({ Icon, label }, i) => (
+              <motion.a
+                key={i}
+                href="#"
+                target="_blank"
+                className="group relative text-muted-foreground hover:text-primary transition-colors"
+                whileHover={{
+                  y: -10,
+                  scale: 1.2,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 320,
+                  damping: 18,
+                }}
+              >
+                <Icon />
+
+                {/* Tooltip */}
+                <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all text-xs bg-background/80 backdrop-blur px-2 py-1 rounded shadow whitespace-nowrap">
+                  {label}
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </div>
+    ),
+  }));
+
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
@@ -17,60 +86,7 @@ export default function ProjectsSection() {
           and seamless user experience.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, key) => (
-            <div
-              key={key}
-              className="group gradient-card rounded-lg overflow-hidden shadow-xs card-hover"
-            >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, key) => (
-                    <span
-                      key={key}
-                      className="px-2 py-1 text-xs font-medium border rounded-full text-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Tabs tabs={tabs} />
 
         <div className="text-center mt-12">
           <a
