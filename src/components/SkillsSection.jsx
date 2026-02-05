@@ -1,6 +1,7 @@
 import { categories, skills } from "@/data/skills";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -27,8 +28,21 @@ export default function SkillsSection() {
                   ? "bg-primary text-primary-foreground"
                   : "text-foreground hover:bg-primary/20",
               )}
+              style={{
+                transformStyle: "preserve-3d",
+              }}
             >
-              {category}
+              {activeCategory === category && (
+                <motion.div
+                  layoutId="active-category"
+                  transition={{ type: "spring", bounce: 0.3, duration: 0.5 }}
+                  style={{
+                    borderRadius: 9999,
+                  }}
+                  className={cn("absolute inset-0 bg-primary")}
+                />
+              )}
+              <span className="relative z-10">{category}</span>
             </button>
           ))}
         </div>
