@@ -1,12 +1,10 @@
 import { useToast } from "@/hooks/use-toast";
-import { Briefcase, Code, User } from "lucide-react";
+import { Code, Layers, Monitor, Server } from "lucide-react";
 
 export default function AboutSection() {
   const { toast } = useToast();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-
     setTimeout(() => {
       toast({
         title: "CV Download Started!",
@@ -24,22 +22,20 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-              alias?
+              Passionate Fullstack Developer
             </h3>
 
             <p className="text-muted-foreground">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-              debitis consectetur? Dolorum perspiciatis, quisquam, accusamus
-              accusantium laboriosam veniam labore recusandae rerum, autem eaque
-              doloremque aperiam facilis ullam vel ab commodi!
+              With 3 years of experience as a Fullstack Developer, I build web
+              applications from frontend interfaces to backend logic. I focus on
+              crafting interactive, performant, and visually engaging
+              applications that bring ideas to life.
             </p>
 
             <p className="text-muted-foreground">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-              debitis consectetur? Dolorum perspiciatis, quisquam, accusamus
-              accusantium laboriosam veniam labore recusandae rerum, autem eaque
-              doloremque aperiam facilis ullam vel ab commodi!
+              Passionate about clean code, elegant design, and smooth
+              animations, I continuously explore new technologies to keep my
+              projects innovative and engaging.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -49,7 +45,8 @@ export default function AboutSection() {
               </a>
 
               <a
-                href="#"
+                href="/test-download-cv.pdf"
+                download="test-download-cv.pdf"
                 onClick={handleSubmit}
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
@@ -60,49 +57,51 @@ export default function AboutSection() {
           </div>
 
           <div className="grid grid-cols-1 gap-6">
-            <div className="gradient-border p-6 card-hover">
+            <div className="gradient-card p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
+                  <Monitor className="h-6 w-6 text-primary" />
                 </div>
 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Web Development</h4>
+                  <h4 className="font-semibold text-lg">Frontend</h4>
                   <p className="text-muted-foreground">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Inventore, qui.
+                    Crafting interactive and responsive user interfaces that
+                    provide seamless and engaging experiences.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="gradient-border p-6 card-hover">
+            <div className="gradient-card p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <User className="h-6 w-6 text-primary" />
+                  <Server className="h-6 w-6 text-primary" />
                 </div>
 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
+                  <h4 className="font-semibold text-lg">Backend</h4>
                   <p className="text-muted-foreground">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Inventore, qui.
+                    Developing robust server-side systems, managing databases,
+                    and creating APIs that power seamless applications.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="gradient-border p-6 card-hover">
+            <div className="gradient-card p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="h-6 w-6 text-primary" />
+                  <Layers className="h-6 w-6 text-primary" />
                 </div>
 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
+                  <h4 className="font-semibold text-lg">
+                    Fullstack Integration
+                  </h4>
                   <p className="text-muted-foreground">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Inventore, qui.
+                    Connecting frontend and backend, integrating services, and
+                    ensuring scalable, end-to-end solutions.
                   </p>
                 </div>
               </div>

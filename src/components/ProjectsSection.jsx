@@ -12,16 +12,16 @@ export default function ProjectsSection() {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
-          voluptates dignissimos modi vel architecto illum labore sit hic cum
-          animi possimus cumque eius ratione quam!
+          Here are some of my recent projects, showcasing my work as a Fullstack
+          Developer. Each project is built with focus on performance, usability,
+          and seamless user experience.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, key) => (
             <div
               key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group gradient-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-48 overflow-hidden">
                 <img
@@ -74,8 +74,9 @@ export default function ProjectsSection() {
 
         <div className="text-center mt-12">
           <a
-            href="#"
+            href="https://github.com/dlorr"
             target="_blank"
+            rel="noopener noreferrer"
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
           >
             Check My Github <ArrowRight size={16} />

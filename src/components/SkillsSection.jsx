@@ -37,7 +37,7 @@ export default function SkillsSection() {
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              className="gradient-card p-6 rounded-lg shadow-xs card-hover"
             >
               <div className="text-left mb-4">
                 <h3 className="font-semibold text-lg">{skill.name}</h3>

@@ -1,4 +1,5 @@
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import {
   Instagram,
@@ -36,8 +37,8 @@ export default function ContactSection() {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui expedita
-          quibusdam nihil delectus minima laboriosam maxime ratione.
+          Have a project idea or want to collaborate? Let's create something
+          stellar together!
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -96,7 +97,7 @@ export default function ContactSection() {
 
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
+              {/* <div className="flex space-x-4 justify-center">
                 <a
                   href="#"
                   target="_blank"
@@ -118,11 +119,39 @@ export default function ContactSection() {
                 >
                   <Instagram />
                 </a>
+              </div> */}
+
+              <div className="flex space-x-6 justify-center">
+                {[
+                  { Icon: Linkedin, label: "LinkedIn" },
+                  { Icon: Twitter, label: "Twitter" },
+                  { Icon: Instagram, label: "Instagram" },
+                ].map(({ Icon, label }, i) => (
+                  <motion.a
+                    key={i}
+                    href="#"
+                    target="_blank"
+                    className="group relative text-muted-foreground hover:text-primary transition-colors"
+                    whileHover={{ y: -10, scale: 1.2 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 320,
+                      damping: 18,
+                    }}
+                  >
+                    <Icon />
+
+                    {/* Tooltip */}
+                    <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all text-xs bg-background/80 backdrop-blur px-2 py-1 rounded shadow">
+                      {label}
+                    </span>
+                  </motion.a>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-lg shadow-xs">
+          <div className="gradient-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -131,7 +160,7 @@ export default function ContactSection() {
                   htmlFor="name"
                   className="block text-sm font-medium mb-2"
                 >
-                  Your Name
+                  Name
                 </label>
                 <input
                   type="text"
@@ -148,7 +177,7 @@ export default function ContactSection() {
                   htmlFor="email"
                   className="block text-sm font-medium mb-2"
                 >
-                  Your Email
+                  Email
                 </label>
                 <input
                   type="email"
@@ -165,7 +194,7 @@ export default function ContactSection() {
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                 >
-                  Your Message
+                  Message
                 </label>
                 <textarea
                   id="message"
