@@ -39,13 +39,22 @@ export default function ProjectsSection() {
 
           <div className="flex space-x-6 justify-center">
             {[
-              { Icon: ExternalLink, label: "Visit Website" },
-              { Icon: Github, label: "Visit Github Repository" },
-            ].map(({ Icon, label }, i) => (
+              {
+                Icon: ExternalLink,
+                label: "Visit Demo",
+                href: project.demoUrl,
+              },
+              {
+                Icon: Github,
+                label: "Visit Github Repository",
+                href: project.githubUrl,
+              },
+            ].map(({ Icon, label, href }, i) => (
               <motion.a
                 key={i}
-                href="#"
+                href={href}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="group relative text-muted-foreground hover:text-primary transition-colors"
                 whileHover={{
                   y: -10,
